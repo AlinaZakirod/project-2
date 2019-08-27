@@ -15,7 +15,7 @@ router.get('/layout/new', (req, res, next) => {
 
 
 router.post('/layout/new', (req, res, next) => {
-  Furniture
+  Layout
     .create(req.body)
     .then(newLayout =>{
       res.redirect('/layouts')

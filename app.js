@@ -124,10 +124,8 @@ app.use('/', index);
 
 //require routes:
 app.use('/', require('./routes/user-routes'))
-
-app.use('/', require('./routes/test-route'))
-
 app.use('/', require('./routes/layout-routes'))
+app.use("/",require('./routes/furniture-api-routes'));
 
 
 module.exports = app;
