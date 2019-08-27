@@ -31,9 +31,7 @@ router.post('/signup', (req, res, next) => {
             req.flash('sucess', "account successfully created")
             res.redirect('/profile')
         })
-        .catch((err) => {
-            next(err)
-        })
+        .catch(err => console.log("error with furniture ", err))
 })
 
 
@@ -72,14 +70,14 @@ router.post('/logout', (req, res, next) => {
 //                                       failureRedirect: '/login' }));
 
 
-router.get('/:Id', (req, res, next) =>{
-  // User
-  //   .findById(req.params.Id)
-  //   .then(theUser => {
-      res.render('/profile', {theUser});
-    })
-//     .catch(err => console.log('error with User', err))
-// })
+// router.get('/:Id', (req, res, next) =>{
+//   // User
+//   //   .findById(req.params.Id)
+//   //   .then(theUser => {
+//       res.render('/profile', {theUser});
+//     })
+// //     .catch(err => console.log('error with User', err))
+// // })
 
 
 

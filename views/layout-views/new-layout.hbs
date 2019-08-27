@@ -1,0 +1,14 @@
+<h1>New Layout</h1>
+<form action="/layout/new" method="POST">
+<div>
+  <label for="objects">Objects</label>
+  <select  multiple type ="text"  name="objects" id="" style="width: 300px">
+    {{#each allFurniture}}
+      <option value ="{{ this._id }}">{{this.title}}</option>
+    {{/each}}
+  </select>
+
+</div>
+  
+  <button type="submit">Submit</button>
+</form>
