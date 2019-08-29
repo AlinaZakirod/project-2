@@ -7,7 +7,7 @@ const Layout = require('../models/Layout');
 router.get('/layout/new', (req, res, next) => {
   Furniture
     .find()
-    .then(allFurniture => res.render('layout-views/new-layout', {allFurniture}))
+    .then(allFurniture => res.render('layout-views/layout-new', {allFurniture}))
     // .then(a=>console.log(a))
     .catch(err => console.log("error rendering furniture", err))
   
@@ -15,7 +15,7 @@ router.get('/layout/new', (req, res, next) => {
 
 
 router.post('/layout/new', (req, res, next) => {
-  Furniture
+  Layout
     .create(req.body)
     .then(newLayout =>{
       res.redirect('/layouts')

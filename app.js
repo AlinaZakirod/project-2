@@ -1,5 +1,5 @@
 require('dotenv').config();
-
+//this is a test to se if I can push it back
 //by irongenerate default
 const bodyParser   = require('body-parser');
 const cookieParser = require('cookie-parser');
@@ -124,10 +124,8 @@ app.use('/', index);
 
 //require routes:
 app.use('/', require('./routes/user-routes'))
-
-app.use('/', require('./routes/test-route'))
-
 app.use('/', require('./routes/layout-routes'))
+app.use("/",require('./routes/furniture-api-routes'));
 
 
 module.exports = app;
