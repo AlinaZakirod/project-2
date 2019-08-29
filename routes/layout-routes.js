@@ -8,7 +8,6 @@ router.get('/layout/new', (req, res, next) => {
   Furniture
     .find()
     .then(allFurniture => res.render('layout-views/layout-new', {allFurniture}))
-    // .then(a=>console.log(a))
     .catch(err => console.log("error rendering furniture", err))
   
 })
