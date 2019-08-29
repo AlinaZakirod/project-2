@@ -14,24 +14,24 @@ const furnitureArray = [
     x: 0,
     y: 0,
     image: '/images/table.png',
-    width: 120,
-    height: 80
+    width: 50,
+    height: 50
   },
   { 
     title: 'sink',
     x: 140,
     y: 0,
     image: '/images/sink.jpg',
-    width: 40,
-    height: 40
+    width: 50,
+    height: 50
   },
   { 
     title: 'sofa',
     x: 280,
     y: 0,
     image: '/images/sofa.jpg',
-    width: 200,
-    height: 40
+    width: 50,
+    height: 50
   }
 ]
 Furniture 

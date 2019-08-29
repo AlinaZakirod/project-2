@@ -1,5 +1,13 @@
 <h1>layout Details</h1>
 {{#each furnitureList}}
-  <li>{{this.title}}, {{this.x}}, {{this.y}}</li>
-
+  <h1>{{this.title}}</h1>
+  <img src="{{this.image}}" alt="" style="width:{{this.furnitureObject.width}}, height:{{this.furnitureObject.height}} "> 
+  <br>
+  {{this.x}}
+  <br>
+  {{this.y}}
 {{/each}}
+
+<hr>
+<canvas id ="" width="1000" heigh ="1000" style="border: solid 5px red"></canvas>
+<script src="../../public/javascripts/canvas.js"></script>
