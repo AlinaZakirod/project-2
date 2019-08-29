@@ -18,5 +18,17 @@ window.onload =()=>{
     });   
   })
   .catch(err => console.log(err))
+
+
+document.getElementById('add-table').onclick = function(e){
+  axios.post()
+  .then()
+
+
+}
+
+
+
+
 }
 
