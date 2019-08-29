@@ -9,6 +9,10 @@ const layoutSchema = new Schema({
       ref: "Furniture"
   }
 ],
+author: {
+  type: Schema.Types.ObjectId,
+  ref: "User"
+}
 });
 
 const Layout = mongoose.model('Layout', layoutSchema);

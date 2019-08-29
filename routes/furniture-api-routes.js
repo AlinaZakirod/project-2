@@ -13,4 +13,22 @@ router.get('/api/furniture', (req,res,next)=>{
           .catch(err=>next(err))  
 })
 
+
+// router.post('/api/furniture', (req, res, next)=>{
+//     let id = req.params.id;
+//   Furniture
+//           .create({
+//       title: req.body.title,
+//       occupation: req.body.theOccupation,
+//       catchphrase: req.body.theCatchphrase
+//   })
+//   .then((response)=>{
+//       res.json({msg: 'yay, good job'});
+//   })
+//   .catch((err)=>{
+//       console.log(err);
+//   })
+// })
+
+
 module.exports = router;
