@@ -1,20 +1,20 @@
 const express = require('express');
 const router = express.Router();
-const Furniture = require('../models/Furniture');
+const Component = require('../models/Component');
 
 
-router.get('/api/furniture', (req,res,next)=>{
+router.get('/api/components', (req,res,next)=>{
   let id = req.params.id;
-  Furniture
+  Component
           .find()
-          .then(allFurniture =>{
-            res.json(allFurniture);
+          .then(components => {
+            res.json(components);
           })
           .catch(err=>next(err))  
 })
 
-router.post('/api/furniture', (req,res,next) => {
-  Furniture
+router.post('/api/components', (req,res,next) => {
+  Component
           .create(req.body)
           .then(newComponent => {
             console.log('Component successfully added')

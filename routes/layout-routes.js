@@ -1,14 +1,14 @@
 const express = require("express");
 const router = express.Router();
-const Furniture = require('../models/Furniture');
+const Component = require('../models/Component');
 const Layout = require('../models/Layout');
 
 
 router.get('/layout/new', (req, res, next) => {
-  Furniture
+  Component
     .find()
-    .then(allFurniture => res.render('layout-views/layout-new', {allFurniture}))
-    .catch(err => console.log("error rendering furniture", err))
+    .then(components => res.render('layout-views/layout-new', {components}))
+    .catch(err => console.log("error rendering component", err))
   
 })
 
@@ -19,14 +19,14 @@ router.post('/layout/new', (req, res, next) => {
     .then(newLayout =>{
       res.redirect('/layouts')
     })
-    .catch( err => console.log("Error while creating a layout:", err))
+    .catch(err => console.log("Error while creating a layout:", err))
 })
 
 //to display layouts
 router.get('/layouts', (req, res, next) => {
-  Furniture
+  Component
     .find()
-    .then(furnitureList => res.render('layout-views/layout-details.hbs', {furnitureList}))
+    .then(components => res.render('layout-views/layout-details.hbs', {components}))
     .catch(err => console.log('error displaying layout-details: ', err))
 })
 

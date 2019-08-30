@@ -10,5 +10,5 @@ const furnitureSchema = new Schema({
   height: Number
 });
 
-const Furniture = mongoose.model('Furniture', furnitureSchema);
-module.exports = Furniture;
+const Component = mongoose.model('Component', furnitureSchema);
+module.exports = Component;

@@ -125,7 +125,7 @@ app.use('/', index);
 //require routes:
 app.use('/', require('./routes/user-routes'))
 app.use('/', require('./routes/layout-routes'))
-app.use("/",require('./routes/furniture-api-routes'));
+app.use("/",require('./routes/component-api-routes'));
 
 
 module.exports = app;
