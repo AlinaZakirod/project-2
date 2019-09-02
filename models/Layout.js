@@ -3,12 +3,12 @@ const Schema   = mongoose.Schema;
 
 const layoutSchema = new Schema({
   title : String,
-  furnitureObjects : [
+  _furnitureObjects: [
     {
       type: Schema.Types.ObjectId,
-      ref: "Furniture"
-  }
-],
+      ref: "Components"
+    }
+  ],
 author: {
   type: Schema.Types.ObjectId,
   ref: "User"

@@ -1,0 +1,13 @@
+<h2>layout Index Page</h2>
+
+<div>
+  {{#each listOfLayouts}}
+    <div>
+      <a href="/layouts/details/{{this._id}}"><h3>{{this.title}}</h3></a>
+      <a href="/layouts/edit/{{this._id}}">Edit This Layout</a>
+      {{!-- <form action="/layouts/{{this._id}}/destroy" method="POST">
+          <button>Delete layout</button> --}}
+      </form>
+    </div>
+  {{/each}}
+</div>

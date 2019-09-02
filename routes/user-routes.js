@@ -55,6 +55,15 @@ router.post('/logout', (req, res, next) => {
 })
 
 
+//profile route
+router.get('/profile', (req, res, next) => {
+  res.render('/user-views/profile')
+})
+
+
+
+
+
 // FACEBOOK
 // Redirect the user to Facebook for authentication.  When complete,
 // Facebook will redirect the user back to the application at

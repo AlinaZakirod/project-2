@@ -1,0 +1,11 @@
+<h1>{{theSingleLayout.title}}</h1>
+
+<h2>Components</h2>
+{{#each theSingleLayout._furnitureObjects}}
+
+<div>
+    <p>{{this.title}}, {{this.x}}, {{this.y}}, {{this.width}}, {{this.height}}</p>
+    <img src="{{this.image}}" alt="">
+</div>
+
+{{/each}}

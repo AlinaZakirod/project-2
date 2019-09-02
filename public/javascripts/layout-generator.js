@@ -4,7 +4,8 @@ window.onload =()=>{
 
   let canvas = document.querySelector('#canvas');
   let context = canvas.getContext('2d');
-  let furnitureArray = [];
+  // let furnitureArray = [];
+  import {array} from "../../routes/component-api-routes.js";
 
   function drawLayout(){
       axios.get('/api/components')
@@ -38,11 +39,25 @@ window.onload =()=>{
       width:70,
       height:70,
     };
-    axios.post('/api/components',element)
+    axios.post('/api/components', element)
           .then(drawLayout())
           .catch(err => console.log(err))
   })
 
+
+  $('#add-layout').click(function(e){
+    e.preventDefault(e);
+    let title = document.getElementById('layoutTitle').value;
+    let layout = {
+      theTitle = title,
+      array = _furnitureObjects 
+    };
+
+    axios.post('/api/layouts', layout)
+      .then(drawLayout())
+      .catch(err => console.log(err))
+  })
 }
+
 
 

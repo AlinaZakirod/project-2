@@ -4,31 +4,36 @@ const Component = require('../models/Component');
 const Layout = require('../models/Layout');
 
 
-router.get('/layout/new', (req, res, next) => {
+
+router.get('/create', (req, res, next) => {
   Component
     .find()
-    .then(components => res.render('layout-views/layout-new', {components}))
-    .catch(err => console.log("error rendering component", err))
-  
-})
+    .then((result) => res.render('layout-views/layout-new', {allComponents: result}))
+    .catch(err => {
+      next(err);
+    })
+});
 
 
-router.post('/layout/new', (req, res, next) => {
+router.post('/layout/create', (req, res, next) => {
+  console.log("MM")
   Layout
     .create(req.body)
-    .then(newLayout =>{
+    .populate('_furnitureObjects')
+    .then(newLayout => {
+      console.log("whey!", newLayout)
       res.redirect('/layouts')
     })
     .catch(err => console.log("Error while creating a layout:", err))
 })
 
-//to display layouts
 router.get('/layouts', (req, res, next) => {
-  Component
+  Layout
     .find()
-    .then(components => res.render('layout-views/layout-details.hbs', {components}))
-    .catch(err => console.log('error displaying layout-details: ', err))
-})
+    .then(layoutsFromDb => res.render('layout-views/layouts', {layouts: layoutsFromDb}))
+    .catch(err => console.log("error while getting layouts from DB", err));
+});
+
 
 
 module.exports = router;
